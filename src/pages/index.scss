@@ -1,0 +1,124 @@
+:root {
+  --primary-light: #8abdff;
+  --primary: #6d5dfc;
+  --primary-dark: #5b0eeb;
+  
+  --white: #FFFFFF;
+  --greyLight-1: #E4EBF5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+}
+
+html, body {
+  background: var(--greyLight-1) !important;
+  width: 100vw;
+  height: 100vh;
+}
+$shadow: .3rem .3rem .6rem var(--greyLight-2), 
+-.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+inset -.2rem -.2rem .5rem var(--white);
+
+.where   {
+  position: absolute;
+  right: 5px;
+  font-size: 10px;
+  bottom: 5px;
+  color: black;
+  text-decoration: none;
+}
+
+.where:hover  {
+  color: black;
+  text-decoration: none;
+}
+.content {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  padding: 50px 20px;
+  background: var(--greyLight-1);
+  box-shadow: $shadow;
+}
+
+.info {
+  display: inline;
+}
+.input-group-prepend > span {
+  border: none;
+  background-color: #55b9f3;
+  color: white;
+  font-weight: bolder;
+}
+
+.input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
+  border: none !important;
+  outline: none !important;
+  border-radius: 10px !important;
+}
+
+.form-control:focus {
+  box-shadow:  20px 20px 60px #489dcf, 
+             -20px -20px 60px #62d5ff !important;
+}
+
+
+/*  SEARCH  */
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__input {
+    width: 100%;
+    height: 4rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding-left: 3.8rem;
+    box-shadow: $inner-shadow;
+    background: none;
+    font-family: inherit;
+    color: var(--greyDark);
+
+    &::placeholder { color: var(--greyLight-3); }
+    &:focus { 
+      outline: none; 
+      box-shadow: $shadow; 
+
+       + .search__icon {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    position: absolute;
+    font-size: 2rem;
+    padding: 0 1rem;
+    display: flex;
+    color: var(--greyDark);
+    transition: .3s ease;
+  }
+}
+
+.mostUsedApp {
+  justify-self: center;
+  margin-top: 2em;
+  min-width: 30%;
+  border-radius: 10px;
+  box-shadow: $shadow;
+  line-height: 2rem;
+  align-items: center;
+  p {
+    font-size: 1.2rem;
+    color: var(--greyDark);
+    padding: 4px;
+    margin: 0 !important;
+  }
+}
