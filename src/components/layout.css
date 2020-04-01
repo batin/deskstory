@@ -620,3 +620,25 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.layout {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+a {
+  color: #fc5185;
+  text-decoration: none;
+}

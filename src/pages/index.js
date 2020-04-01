@@ -1,21 +1,31 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState } from 'react'
+import Layout from '../components/layout'
+import Seo from '../components/seo'
+import axios from 'axios'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const IndexPage = () => {
+  const [apikey, setApikey] = useState('')
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  const hadleChange = async () => {
+    if (apikey !== '') {
+      const res = await axios.get(`https://desktime.com/api/v2/json/employee?apiKey=${apikey}&id=190586&date=2020-04-01`)
+      console.log(res)
+    }
+  }
+
+  hadleChange()
+
+  return (
+    <Layout>
+      <Seo title='Home' />
+      <div className='container'>
+        <h1>Api key:</h1>
+        <a href='https://desktime.com/app/api'>Where is it?</a>
+        <input value={apikey} onChange={e => setApikey(e.target.value)} />
+        {apikey === '' ? <div /> : <p>check log pls</p>}
+      </div>
+    </Layout>
+  )
+}
 
 export default IndexPage
