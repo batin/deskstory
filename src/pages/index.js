@@ -3,8 +3,11 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import axios from "axios"
 import { IoIosSearch } from 'react-icons/io'
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss"
-import "bootstrap/dist/css/bootstrap.min.css"
+import ReactCardCarousel from "react-card-carousel";
+import Card from '../components/card'
+
 const IndexPage = () => {
   const [apikey, setApikey] = useState("")
   const [res, setRes] = useState(null)
@@ -33,6 +36,7 @@ const IndexPage = () => {
         const result = await axios.get(
           `https://desktime.com/api/v2/json/employee?apiKey=${apikey}`
         )
+        console.log(result)
         setRes(result.data)
         handleApps(result.data)
       } catch (err) {
@@ -59,10 +63,10 @@ const IndexPage = () => {
               placeholder="Enter Your API Key"
               value={apikey}
               onChange={e => setApikey(e.target.value)}
-            />
-            <div className="search__icon">
-             <IoIosSearch />
-            </div>
+              />
+              <div className="search__icon">
+                <IoIosSearch />
+              </div>          
           </div>
         </div>
         <a
@@ -75,29 +79,60 @@ const IndexPage = () => {
         </a>
       </div>
       {res?.name ? (
-        <div className="content">
-          <div className="info row text-center">
-            <h4 className="col-6">Name:</h4>{" "}
-            <p className="col-6">{res?.name}</p>
-            <h4 className="col-6">Desktime:</h4>{" "}
-            <p className="col-6">{Math.floor(res?.desktimeTime / 60)}min.</p>
-            <h4 className="col-6">Productivity:</h4>{" "}
-            <p className="col-6">{res?.productivity?.toFixed(1)}%</p>
-            <h4 className="col-6">Efficiency:</h4>{" "}
-            <p className="col-6">{res?.efficiency?.toFixed(2)}%</p>
-          </div>
-            <h4 className='text-center mt-3'>Most used apps:</h4>
-            <div className="d-flex flex-wrap justify-content-center">
-              {
-                mostUsedApps.map(app => {
-                  return (
-                    <div className='mostUsedApp col-8'>
-                    <p>{app.name}</p>
-                  </div> 
-                  )
-                })
-              }
-            </div>
+        // <div className="content">
+        //   <div className="info row text-center">
+        //     <h4 className="col-6">Name:</h4>{" "}
+        //     <p className="col-6">{res?.name}</p>
+        //     <h4 className="col-6">Desktime:</h4>{" "}
+        //     <p className="col-6">{Math.floor(res?.desktimeTime / 60)}min.</p>
+        //     <h4 className="col-6">Productivity:</h4>{" "}
+        //     <p className="col-6">{res?.productivity?.toFixed(1)}%</p>
+        //     <h4 className="col-6">Efficiency:</h4>{" "}
+        //     <p className="col-6">{res?.efficiency?.toFixed(2)}%</p>
+        //   </div>
+        //     <h4 className='text-center mt-3'>Most used apps:</h4>
+        //     <div className="d-flex flex-wrap justify-content-center">
+        //       {
+        //         mostUsedApps.map(app => {
+        //           return (
+        //             <div className='mostUsedApp col-8'>
+        //             <p>{app.name}</p>
+        //           </div> 
+        //           )
+        //         })
+        //       }
+        //     </div>
+        // </div>
+        <div className="w-100 h-100 carousel" >
+          <ReactCardCarousel  
+          // autoplay autoplay_speed={2500}
+          >
+              <Card
+                name={res?.name}
+                desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+                productivity={res?.productivity?.toFixed(1)}
+                efficiency={res?.efficiency?.toFixed(2)}
+                />
+              <Card
+                name={res?.name}
+                desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+                productivity={res?.productivity?.toFixed(1)}
+                efficiency={res?.efficiency?.toFixed(2)}
+                />
+              <Card
+                name={res?.name}
+                desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+                productivity={res?.productivity?.toFixed(1)}
+                efficiency={res?.efficiency?.toFixed(2)}
+                />
+              <Card
+                name={res?.name}
+                desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+                productivity={res?.productivity?.toFixed(1)}
+                efficiency={res?.efficiency?.toFixed(2)}
+                />
+
+          </ReactCardCarousel>
         </div>
       ) : (
         <div />

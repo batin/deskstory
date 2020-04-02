@@ -1,0 +1,96 @@
+:root {
+  --orange: #F45905;
+  --green: #52DE97;
+  
+  --white: #FFFFFF;
+  --greyLight-1: #E9E9E9;
+  --greyLight-2: #CCD6DD;
+  --greyLight-3: #bec8e4;
+  --greyDark: #595959;
+}
+$shadow: .3rem .3rem .6rem var(--greyLight-2), 
+-.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+inset -.2rem -.2rem .5rem var(--white);
+
+
+.myCard {
+  height: 50vh !important;
+  box-shadow: $inner-shadow;
+  color: var(--greyDark);
+  background: var(--greyLight-1);
+  width: 25vh !important;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  .profilePic {
+    @media only screen and (min-width: 760px) {
+      width: 80px;
+      height: 80px;
+    }
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background:var(--greyLight-1);
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1), inset 4px 4px 4px rgba(0, 0, 0, 0.1);
+    .ppBorder {
+      @media only screen and (min-width: 760px) {
+        height: 90px;
+        width: 90px;
+        margin-top: -5px;
+        margin-left: -5px;
+      }
+      height: 70px;
+      width: 70px;
+      margin-top: -5px;
+      margin-left: -5px;
+      border-radius: 50%;
+      box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.1), 2px 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 40px;
+        margin: auto;
+      }
+    }
+  }
+
+
+
+  .nameTag {
+    margin-top: 20px;
+    width: 80%;
+    height: 10%;
+    border-radius: 6px;
+    // background:var(--greyLight-1);
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1), inset 4px 4px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    .ntBorder {
+      box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.1), 2px 2px 4px rgba(0, 0, 0, 0.1);
+      width: 108%;
+      height: 150%;
+      border-radius: 6px;
+      margin-top: -4%;
+      margin-left: -4%;
+      display: flex;
+      align-items: center;
+      h5 {
+        font-size: 8px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+// .chart {
+//   .circler {
+//     stroke: var(--orange) !important;
+//     .CircularProgressbar-path {
+//       stroke: var(--orange) !important;
+//       box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1), 4px 4px 2px rgba(0, 0, 0, 0.1), 0px 0px 10px #F16317;
+//     }
+//   }
+// }
+
