@@ -7,17 +7,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss"
 import ReactCardCarousel from "react-card-carousel";
 import Card from '../components/card'
-
+import useAxios from 'axios-hooks'
+ 
 const IndexPage = () => {
   const [apikey, setApikey] = useState("")
   const [res, setRes] = useState(null)
   const [mostUsedApps, setMostUsedApps] = useState([]);
+
   const  compare = (a, b) =>  {
     return b.duration - a.duration;
   }
   
   const handleApps = (data) => {
-
     let apps = []
     const keys = Object.keys(data.apps)
     keys.map(app => {
@@ -29,12 +30,13 @@ const IndexPage = () => {
       setMostUsedApps(apps.slice(0,4))
     })
   }
+  
   const hadleChange = async () => {
     if (apikey !== "") {
       try {
         setRes(null)
         const result = await axios.get(
-          `https://desktime.com/api/v2/json/employee?apiKey=${apikey}`
+          `https://desktime.com/api/v2/json/employee?apiKey=${apikey}&date=2020-04-03`
         )
         console.log(result)
         setRes(result.data)
@@ -44,6 +46,7 @@ const IndexPage = () => {
       }
     }
   }
+
   useEffect(() => {
     hadleChange()
   }, [apikey])
@@ -79,58 +82,55 @@ const IndexPage = () => {
         </a>
       </div>
       {res?.name ? (
-        // <div className="content">
-        //   <div className="info row text-center">
-        //     <h4 className="col-6">Name:</h4>{" "}
-        //     <p className="col-6">{res?.name}</p>
-        //     <h4 className="col-6">Desktime:</h4>{" "}
-        //     <p className="col-6">{Math.floor(res?.desktimeTime / 60)}min.</p>
-        //     <h4 className="col-6">Productivity:</h4>{" "}
-        //     <p className="col-6">{res?.productivity?.toFixed(1)}%</p>
-        //     <h4 className="col-6">Efficiency:</h4>{" "}
-        //     <p className="col-6">{res?.efficiency?.toFixed(2)}%</p>
-        //   </div>
-        //     <h4 className='text-center mt-3'>Most used apps:</h4>
-        //     <div className="d-flex flex-wrap justify-content-center">
-        //       {
-        //         mostUsedApps.map(app => {
-        //           return (
-        //             <div className='mostUsedApp col-8'>
-        //             <p>{app.name}</p>
-        //           </div> 
-        //           )
-        //         })
-        //       }
-        //     </div>
-        // </div>
         <div className="w-100 h-100 carousel" >
           <ReactCardCarousel  
           // autoplay autoplay_speed={2500}
           >
-              <Card
-                name={res?.name}
-                desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
-                productivity={res?.productivity?.toFixed(1)}
-                efficiency={res?.efficiency?.toFixed(2)}
-                />
-              <Card
-                name={res?.name}
-                desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
-                productivity={res?.productivity?.toFixed(1)}
-                efficiency={res?.efficiency?.toFixed(2)}
-                />
-              <Card
-                name={res?.name}
-                desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
-                productivity={res?.productivity?.toFixed(1)}
-                efficiency={res?.efficiency?.toFixed(2)}
-                />
-              <Card
-                name={res?.name}
-                desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
-                productivity={res?.productivity?.toFixed(1)}
-                efficiency={res?.efficiency?.toFixed(2)}
-                />
+            <Card
+              name={res?.name}
+              desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+              productivity={res?.productivity?.toFixed(1)}
+              efficiency={res?.efficiency?.toFixed(2)}
+              group={res?.group}
+              atWorkTime={Math.floor(res?.atWorkTime / 60) + 'min.'}
+              mostUsedApps={mostUsedApps}
+            />
+            <Card
+              name={res?.name}
+              desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+              productivity={res?.productivity?.toFixed(1)}
+              efficiency={res?.efficiency?.toFixed(2)}
+              group={res?.group}
+              atWorkTime={Math.floor(res?.atWorkTime / 60) + 'min.'}
+              mostUsedApps={mostUsedApps}
+            />
+            <Card
+              name={res?.name}
+              desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+              productivity={res?.productivity?.toFixed(1)}
+              efficiency={res?.efficiency?.toFixed(2)}
+              group={res?.group}
+              atWorkTime={Math.floor(res?.atWorkTime / 60) + 'min.'}
+              mostUsedApps={mostUsedApps}
+            />
+            <Card
+              name={res?.name}
+              desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+              productivity={res?.productivity?.toFixed(1)}
+              efficiency={res?.efficiency?.toFixed(2)}
+              group={res?.group}
+              atWorkTime={Math.floor(res?.atWorkTime / 60) + 'min.'}
+              mostUsedApps={mostUsedApps}
+            />
+            <Card
+              name={res?.name}
+              desktime={Math.floor(res?.desktimeTime / 60) + 'min.'}
+              productivity={res?.productivity?.toFixed(1)}
+              efficiency={res?.efficiency?.toFixed(2)}
+              group={res?.group}
+              atWorkTime={Math.floor(res?.atWorkTime / 60) + 'min.'}
+              mostUsedApps={mostUsedApps}
+            />
 
           </ReactCardCarousel>
         </div>

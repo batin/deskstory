@@ -1,18 +1,21 @@
 :root {
-  --orange: #F45905;
-  --green: #52DE97;
-  
-  --white: #FFFFFF;
-  --greyLight-1: #E9E9E9;
-  --greyLight-2: #CCD6DD;
+  --orange: #f45905;
+  --green: #52de97;
+
+  --white: #ffffff;
+  --greyLight-1: #e9e9e9;
+  --greyLight-2: #ccd6dd;
   --greyLight-3: #bec8e4;
   --greyDark: #595959;
 }
-$shadow: .3rem .3rem .6rem var(--greyLight-2), 
--.2rem -.2rem .5rem var(--white);
-$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
-inset -.2rem -.2rem .5rem var(--white);
+$shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+  -0.2rem -0.2rem 0.5rem var(--white);
+$inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+  inset -0.2rem -0.2rem 0.5rem var(--white);
 
+p {
+  margin-bottom: 0 !important;
+}
 
 .myCard {
   height: 50vh !important;
@@ -33,8 +36,9 @@ inset -.2rem -.2rem .5rem var(--white);
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background:var(--greyLight-1);
-    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1), inset 4px 4px 4px rgba(0, 0, 0, 0.1);
+    background: var(--greyLight-1);
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+      inset 4px 4px 4px rgba(0, 0, 0, 0.1);
     .ppBorder {
       @media only screen and (min-width: 760px) {
         height: 90px;
@@ -47,7 +51,8 @@ inset -.2rem -.2rem .5rem var(--white);
       margin-top: -5px;
       margin-left: -5px;
       border-radius: 50%;
-      box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.1), 2px 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 4px rgba(0, 0, 0, 0.1);
       display: flex;
       align-items: center;
       p {
@@ -57,18 +62,18 @@ inset -.2rem -.2rem .5rem var(--white);
     }
   }
 
-
-
   .nameTag {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 80%;
-    height: 10%;
+    height: 20px;
     border-radius: 6px;
     // background:var(--greyLight-1);
-    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1), inset 4px 4px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+      inset 4px 4px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     .ntBorder {
-      box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.1), 2px 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 4px rgba(0, 0, 0, 0.1);
       width: 108%;
       height: 150%;
       border-radius: 6px;
@@ -77,20 +82,90 @@ inset -.2rem -.2rem .5rem var(--white);
       display: flex;
       align-items: center;
       h5 {
-        font-size: 8px;
+        font-size: 9px;
         margin: auto;
       }
     }
   }
 }
 
-// .chart {
-//   .circler {
-//     stroke: var(--orange) !important;
-//     .CircularProgressbar-path {
-//       stroke: var(--orange) !important;
-//       box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1), 4px 4px 2px rgba(0, 0, 0, 0.1), 0px 0px 10px #F16317;
-//     }
-//   }
-// }
+.chart {
+  .a {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background: #E9E9E9;
+    box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1), 
+                4px 4px 2px rgba(0, 0, 0, 0.1), 0px 0px 10px #52DE97;
+    border-radius: 50%;
+    .b {
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #E9E9E9;
+      box-shadow: inset -4px -4px 2px rgba(255, 255, 255, 0.1), 
+            inset 4px 4px 2px rgba(0, 0, 0, 0.1);
+      .c {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #E9E9E9;
+        box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1), 
+                    4px 4px 2px rgba(0, 0, 0, 0.1);
+        .d {
+          display: flex;
+          align-self: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: #E9E9E9;
+          box-shadow: inset -4px -4px 2px rgba(255, 255, 255, 0.1), 
+                      inset 4px 4px 2px rgba(0, 0, 0, 0.1);
+          
+        }
+      }
+    }
+  }
+  .circler {
+    stroke: var(--orange) !important;
+    .CircularProgressbar-path {
+      stroke: var(--orange) !important;
+      box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1),
+        4px 4px 2px rgba(0, 0, 0, 0.1), 0px 0px 10px #f16317;
+    }
+  }
+}
 
+.mostUsedApps {
+  margin-top: 3vh;
+  p {
+    font-size: 8px;
+  }
+  .progress {
+    height: 0.4rem;
+  }
+}
+
+.title {
+  font-size: 8px;
+  margin-bottom: 0rem;
+}
+
+
+.progress-ring{
+  position: absolute;
+  margin-top: 3px;
+  .progress-ring__circle {
+    stroke: #52DE97;
+  }
+}
