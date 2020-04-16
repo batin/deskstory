@@ -1,27 +1,21 @@
-:root {
-  --orange: #f45905;
-  --green: #52de97;
+$orange: #f45905;
+$green: #52de97;
+$white: #ffffff;
+$greyLight-1: #e9e9e9;
+$greyLight-2: #ccd6dd;
+$greyLight-3: #bec8e4;
+$greyDark: #595959;
 
-  --white: #ffffff;
-  --greyLight-1: #e9e9e9;
-  --greyLight-2: #ccd6dd;
-  --greyLight-3: #bec8e4;
-  --greyDark: #595959;
-}
-$shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
-  -0.2rem -0.2rem 0.5rem var(--white);
-$inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
-  inset -0.2rem -0.2rem 0.5rem var(--white);
+$shadow: 0.3rem 0.3rem 0.6rem $greyLight-2, -0.2rem -0.2rem 0.5rem $white;
 
-p {
-  margin-bottom: 0 !important;
-}
+$inner-shadow: inset 0.2rem 0.2rem 0.5rem $greyLight-2,
+  inset -0.2rem -0.2rem 0.5rem $white;
 
 .myCard {
   height: 50vh !important;
   box-shadow: $inner-shadow;
-  color: var(--greyDark);
-  background: var(--greyLight-1);
+  color: $greyDark;
+  background: $greyLight-1;
   width: 25vh !important;
   border-radius: 10px;
   display: flex;
@@ -36,7 +30,7 @@ p {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: var(--greyLight-1);
+    background: $greyLight-1;
     box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1),
       inset 4px 4px 4px rgba(0, 0, 0, 0.1);
     .ppBorder {
@@ -63,11 +57,10 @@ p {
   }
 
   .nameTag {
-    margin-top: 10px;
+    margin-top: 15px;
     width: 80%;
     height: 20px;
-    border-radius: 6px;
-    // background:var(--greyLight-1);
+    border-radius: 4px;
     box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1),
       inset 4px 4px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -76,14 +69,22 @@ p {
         2px 2px 4px rgba(0, 0, 0, 0.1);
       width: 108%;
       height: 150%;
-      border-radius: 6px;
+      border-radius: 5px;
       margin-top: -4%;
       margin-left: -4%;
       display: flex;
       align-items: center;
       h5 {
+        font-weight: 600;
         font-size: 9px;
         margin: auto;
+        color: $green;
+        // text-shadow: 0px 0px 4px $green;
+      }
+      .name {
+        padding-top: 0.1em;
+        color: unset;
+        // text-shadow: unset;
       }
     }
   }
@@ -92,67 +93,94 @@ p {
 .chart {
   .a {
     position: relative;
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
     display: flex;
     align-self: center;
+    align-items: center;
     justify-content: center;
-    background: #E9E9E9;
-    box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1), 
-                4px 4px 2px rgba(0, 0, 0, 0.1), 0px 0px 10px #52DE97;
+    background: #e9e9e9;
+    box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1),
+      4px 4px 2px rgba(0, 0, 0, 0.1), 0px 0px 10px #52de97;
     border-radius: 50%;
     .b {
       display: flex;
       align-self: center;
+      align-items: center;
       justify-content: center;
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background: #E9E9E9;
-      box-shadow: inset -4px -4px 2px rgba(255, 255, 255, 0.1), 
-            inset 4px 4px 2px rgba(0, 0, 0, 0.1);
+      background: #e9e9e9;
+      box-shadow: inset -4px -4px 2px rgba(255, 255, 255, 0.1),
+        inset 4px 4px 2px rgba(0, 0, 0, 0.1);
       .c {
         display: flex;
         align-self: center;
+        align-items: center;
         justify-content: center;
-        width: 60px;
-        height: 60px;
+        width: 75px;
+        height: 75px;
         border-radius: 50%;
-        background: #E9E9E9;
-        box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1), 
-                    4px 4px 2px rgba(0, 0, 0, 0.1);
+        background: #e9e9e9;
+        box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1),
+          4px 4px 2px rgba(0, 0, 0, 0.1);
         .d {
           display: flex;
           align-self: center;
           justify-content: center;
+          text-align: center;
+          align-items: center;
           width: 60px;
           height: 60px;
           border-radius: 50%;
-          background: #E9E9E9;
-          box-shadow: inset -4px -4px 2px rgba(255, 255, 255, 0.1), 
-                      inset 4px 4px 2px rgba(0, 0, 0, 0.1);
-          
+          background: #e9e9e9;
+          box-shadow: inset -4px -4px 2px rgba(255, 255, 255, 0.1),
+            inset 4px 4px 2px rgba(0, 0, 0, 0.1);
+          .f {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+          }
         }
       }
     }
   }
+
   .circler {
-    stroke: var(--orange) !important;
     .CircularProgressbar-path {
-      stroke: var(--orange) !important;
-      box-shadow: -4px -4px 2px rgba(255, 255, 255, 0.1),
-        4px 4px 2px rgba(0, 0, 0, 0.1), 0px 0px 10px #f16317;
+      stroke: $orange !important;
+    }
+    .CircularProgressbar-text {
+      fill: $orange !important;
+      font-size: 18px !important;
+    }
+  }
+
+  .circler.green {
+    .CircularProgressbar-path {
+      stroke: $green !important;
+    }
+    .CircularProgressbar-text {
+      fill: $green !important;
+      font-size: 18px !important;
     }
   }
 }
 
 .mostUsedApps {
-  margin-top: 3vh;
+  margin-top: 4vh;
   p {
     font-size: 8px;
+    margin-bottom: 2px;
+    margin-top: 2px;
   }
   .progress {
-    height: 0.4rem;
+    height: 4px;
+    .progress-bar {
+      background-color: $orange;
+      box-shadow: 0px 0px 6px $orange;
+    }
   }
 }
 
@@ -161,11 +189,9 @@ p {
   margin-bottom: 0rem;
 }
 
-
-.progress-ring{
+.progress-ring {
   position: absolute;
-  margin-top: 3px;
   .progress-ring__circle {
-    stroke: #52DE97;
+    stroke: #52de97;
   }
 }

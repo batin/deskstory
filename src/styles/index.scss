@@ -1,0 +1,15 @@
+@import "./colors.scss";
+@import "./home.scss";
+@import "./emoji-button.scss";
+@import "./card.scss";
+
+html,
+body {
+  background: linear-gradient(215.97deg, #7071f6 16.62%, #ff63a5 51.91%);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: -apple-system, Dosis blinkmacsystemfont, gill sans,
+  helvetica neue, helvetica, sans-serif;
+  cursor: url("../images/cursor.png"), auto;
+}

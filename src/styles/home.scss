@@ -1,0 +1,79 @@
+.react-datepicker {
+  font-family: Dosis !important;
+  .react-datepicker__day--selected {
+    background: linear-gradient(256.02deg, #7071f6 0%, #ff63a5 105.89%);
+  }
+}
+.home {
+  font-family: Dosis;
+  .top {
+    height: 50vh;
+    .key {
+      .search-input {
+        background-color: $white;
+        border-radius: 10px;
+        border: none;
+        color: rgba(0, 0, 0, 0.29);
+        font-weight: 300;
+        font-size: 20px;
+        height: 6vh;
+        line-height: 6vh;
+        letter-spacing: 1.5pt;
+        width: 250px;
+        text-align: center;
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.29);
+        }
+        &:focus {
+          outline: none !important;
+        }
+      }
+    }
+    .where {
+      color: $white;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 1.5pt;
+    }
+    .date {
+      background-color: $white;
+      border-radius: 10px;
+      border: none;
+      color: rgba(0, 0, 0, 0.29);
+      font-weight: 300;
+      font-size: 20px;
+      height: 6vh;
+      line-height: 6vh;
+      letter-spacing: 1.5pt;
+      width: 250px;
+      text-align: center;
+      &:focus {
+        outline: none !important;
+      }
+    }
+  }
+  .bottom {
+    background-color: $white;
+    border-radius: 55px 55px 0 0;
+    height: 55vh;
+    margin: 0 !important;
+    width: 100vw;
+    // position: relative;
+    .next-button {
+      align-self: center;
+      border-radius: 10px;
+      bottom: 5vh;
+      background: linear-gradient(256.02deg, #7071f6 0%, #ff63a5 105.89%);
+      color: $white;
+      font-weight: 300;
+      font-size: 22px;
+      height: 6vh;
+      line-height: 6vh;
+      letter-spacing: 1.5pt;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      width: 50vw;
+    }
+  }
+}
