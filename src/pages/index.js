@@ -92,13 +92,13 @@ const IndexPage = () => {
           />
         </div>
         <div className="bottom">
-          <div className="container emojis pt-2 d-flex flex-column justify-content-center align-items-center">
-            <div className="row m-2 mt-5">
+          <div className="container emojis pt-2 d-flex flex-column justify-content-center align-items-center align-content-center">
+            <div className="row m-2 mt-4">
               <div className="col-3">
                 <EmojiButton text="🙂" parentCallback={() => setEmoji("🙂")} />
               </div>
               <div className="col-3">
-                <EmojiButton text="🥰" parentCallback={() => setEmoji("🥰")} />
+                <EmojiButton text="💀" parentCallback={() => setEmoji("💀")} />
               </div>
               <div className="col-3">
                 <EmojiButton text="😍" parentCallback={() => setEmoji("😍")} />
@@ -107,7 +107,7 @@ const IndexPage = () => {
                 <EmojiButton text="😘" parentCallback={() => setEmoji("😘")} />
               </div>
             </div>
-            <div className="row m-2 mt-4">
+            <div className="row m-2">
               <div className="col-3">
                 <EmojiButton text="👽" parentCallback={() => setEmoji("👽")} />
               </div>
@@ -121,7 +121,7 @@ const IndexPage = () => {
                 <EmojiButton text="🤑" parentCallback={() => setEmoji("🤑")} />
               </div>
             </div>
-            <div className="row m-2 mt-4">
+            <div className="row m-2">
               <div className="col-3">
                 <EmojiButton text="😀" parentCallback={() => setEmoji("😀")} />
               </div>
@@ -132,11 +132,7 @@ const IndexPage = () => {
                 <EmojiButton text="☺️" parentCallback={() => setEmoji("☺️")} />
               </div>
               <div className="col-3">
-                <EmojiButton
-                  isActive
-                  text="😇"
-                  parentCallback={() => setEmoji("😇")}
-                />
+                <EmojiButton text="😇" parentCallback={() => setEmoji("😇")} />
               </div>
             </div>
             <Link className="next-button" to="/badges">

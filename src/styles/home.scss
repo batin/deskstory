@@ -7,7 +7,7 @@
 .home {
   font-family: Dosis;
   .top {
-    height: 50vh;
+    height: 45vh;
     .key {
       .search-input {
         background-color: $white;
@@ -17,7 +17,7 @@
         font-weight: 300;
         font-size: 20px;
         height: 6vh;
-        line-height: 6vh;
+        line-height: 3vh;
         letter-spacing: 1.5pt;
         width: 250px;
         text-align: center;
@@ -43,7 +43,7 @@
       font-weight: 300;
       font-size: 20px;
       height: 6vh;
-      line-height: 6vh;
+      line-height: 3vh;
       letter-spacing: 1.5pt;
       width: 250px;
       text-align: center;
@@ -58,11 +58,16 @@
     height: 55vh;
     margin: 0 !important;
     width: 100vw;
-    // position: relative;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
     .next-button {
+      margin: auto;
       align-self: center;
+      text-align: center;
       border-radius: 10px;
-      bottom: 5vh;
+      bottom: 3vh;
       background: linear-gradient(256.02deg, #7071f6 0%, #ff63a5 105.89%);
       color: $white;
       font-weight: 300;
@@ -74,6 +79,16 @@
       text-align: center;
       text-decoration: none;
       width: 50vw;
+    }
+
+    @media only screen and (width: 320px) {
+      width: 320px;
+      .next-button {
+        margin-left: 80px;
+        margin-right: 80px;
+        width: 120px;
+        bottom: 1vh;
+      }
     }
   }
 }
