@@ -1,0 +1,118 @@
+.profileInfo {
+  height: 20vh;
+  .pp {
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: $shadow;
+    height: 10vh;
+    // margin-top: 5vh;
+    width: 10vh;
+    p {
+      font-size: 4.5vh;
+      margin: 0;
+      padding: 0;
+      text-shadow: 0 0 5px $grey;
+    }
+  }
+  .userInfo {
+    p {
+      color: $white;
+      letter-spacing: 1pt;
+      font-size: 2vh;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.desktimeInfoContainer {
+  div {
+    p {
+      text-transform: capitalize;
+      color: $white;
+      font-size: 1.6vh;
+      letter-spacing: 1pt;
+      margin-bottom: 5px;
+    }
+    &:first-child > div > div {
+      background-color: $white;
+      height: 9vh;
+      width: 12vh;
+      box-shadow: $shadow;
+      border-radius: 10px;
+    }
+    &:nth-child(2) > div > div {
+      background-color: $white;
+      height: 12vh;
+      width: 12vh;
+      border-radius: 50%;
+      box-shadow: $shadow;
+      .text {
+        letter-spacing: 1pt;
+        font-size: 3.5vh;
+      }
+    }
+    .text {
+      font-size: 2.5vh;
+      font-weight: 600;
+      text-transform: capitalize;
+      letter-spacing: 1pt;
+      color: $textGradient1 !important;
+      background: $textGradient1;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.mostUsedApps {
+  .title {
+    letter-spacing: 1pt;
+    font-size: 2.2vh;
+    color: $white;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .mostUsedAppsContainer {
+    width: 65vw;
+    height: max-content;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    background-color: $white;
+    box-shadow: $shadow;
+    border-radius: 10px;
+  }
+  .app {
+    width: 100%;
+    .appName {
+      background: $textGradient1;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5vh;
+      margin-top: 0.5vh;
+      letter-spacing: 1pt;
+      font-size: 2vh;
+    }
+  }
+  .progressBar {
+    padding-top: 14px;
+    height: 16px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background: $textGradient1 !important;
+    p {
+      text-align: left;
+      padding-left: 10px;
+      color: #fff;
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+}

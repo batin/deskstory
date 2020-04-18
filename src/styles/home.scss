@@ -4,6 +4,9 @@
     background: linear-gradient(256.02deg, #7071f6 0%, #ff63a5 105.89%);
   }
 }
+.input-error {
+  border: 2px solid red !important;
+}
 .home {
   font-family: Dosis;
   .top {
@@ -79,6 +82,8 @@
       text-align: center;
       text-decoration: none;
       width: 50vw;
+      border: none;
+      outline: none;
     }
 
     @media only screen and (width: 320px) {

@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useRef, useContext } from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import axios from "axios"
-import { IoIosSearch } from "react-icons/io"
+import { AuthContext } from "../components/context"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../styles/index.scss"
-import ReactCardCarousel from "react-card-carousel"
-import Card from "../components/card"
-import Card2 from "../components/card2"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import EmojiButton from "../components/emoji-button"
+import { IoIosHeart } from "react-icons/io"
 
 const IndexPage = () => {
   const [apikey, setApikey] = useState("")
-  const [res, setRes] = useState(null)
-  const [mostUsedApps, setMostUsedApps] = useState([])
   const [date, setDate] = useState(new Date())
   const [emoji, setEmoji] = useState("⏳")
+  const userContext = useContext(AuthContext)
+  const apiKeyInput = useRef()
   const compare = (a, b) => {
     return b.duration - a.duration
   }
@@ -31,50 +29,91 @@ const IndexPage = () => {
       sites.map(site => {
         apps = [...apps, data.apps[app][site]]
       })
-      apps = apps.sort(compare)
-      setMostUsedApps(apps.slice(0, 4))
     })
+    if (apps.length === 0) {
+      return null
+    } else {
+      apps = apps.sort(compare)
+      return apps.slice(0, 4)
+    }
   }
 
-  const hadleChange = async () => {
+  const fetchDesktimeData = async () => {
     let d = [
       date.getFullYear(),
       ("0" + (date.getMonth() + 1)).slice(-2),
       ("0" + date.getDate()).slice(-2),
     ].join("-")
-    console.log(d)
     if (apikey !== "") {
       try {
-        setRes(null)
         const result = await axios.get(
           `https://desktime.com/api/v2/json/employee?apiKey=${apikey}&date=${d}`
         )
-        console.log(result)
-        setRes(result.data)
-        handleApps(result.data)
+        return result.data
       } catch (err) {
         console.log(err)
       }
     }
   }
 
-  useEffect(() => {
-    hadleChange()
-  }, [apikey, date])
+  const setGlobalObject = async () => {
+    try {
+      var response = await fetchDesktimeData()
+      if (response) {
+        const data = {
+          name: response.name,
+          group: response.group,
+          efficiency: response.efficiency,
+          productivity: response.productivity,
+          desktimeTime: response.desktimeTime,
+          atWorkTime: response.atWorkTime,
+          mostUsedApps: handleApps(response),
+        }
+        userContext.setDesktimeData(data)
+        userContext.setEmoji(emoji)
+        navigate("/badges")
+      } else {
+        apiKeyInput.current.className =
+          apiKeyInput.current.className + " input-error"
+      }
+    } catch (err) {
+      console.log("Error occured while setting global object!", err)
+    }
+  }
+
+  const isItEmpty = (event, limit) => {
+    if (event.target.value.length < limit) {
+      if (!event.target.className.includes("input-error")) {
+        event.target.className = event.target.className + " input-error"
+      }
+    } else {
+      event.target.className = event.target.className.replace("input-error", "")
+    }
+  }
 
   return (
     <Layout>
       <Seo title="Home" />
+      <a
+        href="https://github.com/batin/badger"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="menu menuItem"
+      >
+        <IoIosHeart />
+      </a>
       <div className="home">
         <div className="top d-flex flex-column justify-content-center align-items-center">
-          <EmojiButton text={emoji} parentCallback={() => setEmoji("i")} />
+          <EmojiButton text={emoji} parentCallback={() => setEmoji(emoji)} />
           <div className="key mt-5">
             <input
               type="text"
-              className="search-input"
+              className={"search-input"}
               placeholder="API KEY"
               value={apikey}
               onChange={e => setApikey(e.target.value)}
+              onBlur={event => isItEmpty(event, 10)}
+              ref={apiKeyInput}
             />
           </div>
           <a
@@ -129,73 +168,18 @@ const IndexPage = () => {
                 <EmojiButton text="😆" parentCallback={() => setEmoji("😆")} />
               </div>
               <div className="col-3">
-                <EmojiButton text="☺️" parentCallback={() => setEmoji("☺️")} />
+                <EmojiButton text="👨🏼‍💻" parentCallback={() => setEmoji("👨🏼‍💻")} />
               </div>
               <div className="col-3">
                 <EmojiButton text="😇" parentCallback={() => setEmoji("😇")} />
               </div>
             </div>
-            <Link className="next-button" to="/badges">
+            <button onClick={setGlobalObject} className="next-button">
               NEXT
-            </Link>
+            </button>
           </div>
         </div>
       </div>
-      {/* {res?.name ? (
-        <div className="w-100 h-100 carousel">
-          <ReactCardCarousel
-          // autoplay autoplay_speed={2500}
-          >
-            <Card
-              name={res?.name}
-              desktime={Math.floor(res?.desktimeTime / 60) + "min."}
-              productivity={res?.productivity?.toFixed(1)}
-              efficiency={res?.efficiency?.toFixed(2)}
-              group={res?.group}
-              atWorkTime={Math.floor(res?.atWorkTime / 60) + "min."}
-              mostUsedApps={mostUsedApps}
-            />
-            <Card
-              name={res?.name}
-              desktime={Math.floor(res?.desktimeTime / 60) + "min."}
-              productivity={res?.productivity?.toFixed(1)}
-              efficiency={res?.efficiency?.toFixed(2)}
-              group={res?.group}
-              atWorkTime={Math.floor(res?.atWorkTime / 60) + "min."}
-              mostUsedApps={mostUsedApps}
-            />
-            <Card
-              name={res?.name}
-              desktime={Math.floor(res?.desktimeTime / 60) + "min."}
-              productivity={res?.productivity?.toFixed(1)}
-              efficiency={res?.efficiency?.toFixed(2)}
-              group={res?.group}
-              atWorkTime={Math.floor(res?.atWorkTime / 60) + "min."}
-              mostUsedApps={mostUsedApps}
-            />
-            <Card2
-              name={res?.name}
-              desktime={Math.floor(res?.desktimeTime / 60) + "min."}
-              productivity={res?.productivity?.toFixed(1)}
-              efficiency={res?.efficiency?.toFixed(2)}
-              group={res?.group}
-              atWorkTime={Math.floor(res?.atWorkTime / 60) + "min."}
-              mostUsedApps={mostUsedApps}
-            />
-            <Card2
-              name={res?.name}
-              desktime={Math.floor(res?.desktimeTime / 60) + "min."}
-              productivity={res?.productivity?.toFixed(1)}
-              efficiency={res?.efficiency?.toFixed(2)}
-              group={res?.group}
-              atWorkTime={Math.floor(res?.atWorkTime / 60) + "min."}
-              mostUsedApps={mostUsedApps}
-            />
-          </ReactCardCarousel>
-        </div>
-      ) : (
-        <div />
-      )} */}
     </Layout>
   )
 }
