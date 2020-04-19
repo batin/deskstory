@@ -1,28 +1,39 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { navigate } from "gatsby"
 import { AuthContext } from "../components/context"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Menu from "../components/menu"
+// import puppeteer from "puppeteer"
 
 const Badges = () => {
   const userContext = useContext(AuthContext)
+  const [colorState, setColorState] = useState(0)
   useEffect(() => {
-    if (!userContext.user.emoji) {
+    if (!userContext?.user?.emoji) {
       navigate("/")
     }
   }, [])
 
   const nextColor = () => {
-    alert("next color")
+    setColorState((colorState + 1) % 3)
   }
 
-  const download = () => {
-    alert("download")
+  const download = async () => {
+    // try {
+    //   let browser = await puppeteer.launch({ headless: false })
+    //   let page = await browser.newPage()
+    //   await page.goto("http://localhost:8000/")
+    //   await page.screenshot({ path: "./image.jpg", type: "jpeg" })
+    //   await page.close()
+    //   await browser.close()
+    // } catch (err) {
+    //   console.log(err)
+    // }
   }
 
   return (
-    <Layout>
+    <Layout colorState={colorState}>
       <SEO title="Badges For Your Instagram Story" />
       <Menu
         back={() => navigate("/")}
@@ -47,7 +58,7 @@ const Badges = () => {
             <div className="d-flex flex-column align-items-center justify-content-center mr-4">
               <p>Desktime</p>
               <div className="desktimeBadge d-flex align-items-center justify-content-center">
-                <p className="text">
+                <p className={`text ${"coloredText" + colorState}`}>
                   {Math.floor(
                     userContext.user.desktimeData.desktimeTime / 3600
                   ) +
@@ -62,7 +73,7 @@ const Badges = () => {
             <div className="d-flex flex-column align-items-center justify-content-center ml-4">
               <p>Time At Work</p>
               <div className="timeAtWorkBadge d-flex align-items-center justify-content-center">
-                <p className="text">
+                <p className={`text ${"coloredText" + colorState}`}>
                   {Math.floor(userContext.user.desktimeData.atWorkTime / 3600) +
                     "H " +
                     Math.floor(
@@ -77,7 +88,7 @@ const Badges = () => {
             <div className="d-flex flex-column align-items-center justify-content-center mr-4">
               <p>Productivity</p>
               <div className="productivityBadge d-flex align-items-center justify-content-center">
-                <p className="text">
+                <p className={`text ${"coloredText" + colorState}`}>
                   {userContext.user?.desktimeData?.productivity?.toFixed(1)}%
                 </p>
               </div>
@@ -85,7 +96,7 @@ const Badges = () => {
             <div className="d-flex flex-column align-items-center justify-content-center ml-4">
               <p>Efficiency</p>
               <div className="efficiencyBadge d-flex align-items-center justify-content-center">
-                <p className="text">
+                <p className={`text ${"coloredText" + colorState}`}>
                   {userContext.user?.desktimeData?.efficiency?.toFixed(1)}%
                 </p>
               </div>
@@ -93,7 +104,7 @@ const Badges = () => {
           </div>
         </div>
         {userContext.user?.desktimeData?.mostUsedApps ? (
-          <div className="mostUsedApps my-4">
+          <div className="mostUsedApps ">
             <div className="title">
               <p>Most Used Apps</p>
             </div>
@@ -101,9 +112,12 @@ const Badges = () => {
               {userContext.user?.desktimeData?.mostUsedApps?.map((app, key) => {
                 return (
                   <div key={key} className="app p-1 px-3">
-                    <p className="appName">{app.name}</p>
+                    <p className={`appName ${"coloredText" + colorState}`}>
+                      {app.name}
+                    </p>
                     <div
-                      className="progressBar"
+                      className={`progressBar ${"coloredBackground" +
+                        colorState}`}
                       role="progressbar"
                       style={{ width: `${(4 - key) * 25 + "%"}` }}
                       aria-valuenow="75"

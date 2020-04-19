@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, colorState }) => {
   return (
     <>
-      <div className="layout">
+      <div className={`layout coloredBackground${colorState}`} id="layout">
         <main>{children}</main>
       </div>
     </>

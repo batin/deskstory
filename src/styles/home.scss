@@ -8,7 +8,6 @@
   border: 2px solid red !important;
 }
 .home {
-  font-family: Dosis;
   .top {
     height: 45vh;
     .key {
@@ -59,7 +58,7 @@
     background-color: $white;
     border-radius: 55px 55px 0 0;
     height: 55vh;
-    margin: 0 !important;
+    margin: 0;
     width: 100vw;
     justify-content: center;
     align-items: center;
@@ -94,6 +93,26 @@
         width: 120px;
         bottom: 1vh;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .search-input {
+    width: 35vw !important;
+  }
+  .date {
+    width: 35vw !important;
+  }
+  .bottom {
+    border-radius: 55px !important;
+    height: 45vh !important;
+    width: 35vw !important;
+    margin: auto !important;
+    margin-bottom: 50px;
+    .next-button {
+      width: 10vw !important;
+      bottom: 15vh !important;
     }
   }
 }

@@ -1,3 +1,33 @@
+.coloredText0 {
+  background: $textGradient1;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.coloredBackground0 {
+  background: $gradient1;
+}
+
+.coloredText1 {
+  background: $textGradient2;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.coloredBackground1 {
+  background: $gradient2;
+}
+
+.coloredText2 {
+  background: $textGradient3;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.coloredBackground2 {
+  background: $gradient3;
+}
+
 .profileInfo {
   height: 20vh;
   .pp {
@@ -5,7 +35,6 @@
     border-radius: 50%;
     box-shadow: $shadow;
     height: 10vh;
-    // margin-top: 5vh;
     width: 10vh;
     p {
       font-size: 4.5vh;
@@ -17,8 +46,8 @@
   .userInfo {
     p {
       color: $white;
-      letter-spacing: 1pt;
       font-size: 2vh;
+      letter-spacing: 1pt;
       text-transform: capitalize;
     }
   }
@@ -27,92 +56,87 @@
 .desktimeInfoContainer {
   div {
     p {
-      text-transform: capitalize;
       color: $white;
       font-size: 1.6vh;
-      letter-spacing: 1pt;
       margin-bottom: 5px;
+      letter-spacing: 1pt;
+      text-transform: capitalize;
     }
     &:first-child > div > div {
       background-color: $white;
+      border-radius: 10px;
+      box-shadow: $shadow;
       height: 9vh;
       width: 12vh;
-      box-shadow: $shadow;
-      border-radius: 10px;
     }
     &:nth-child(2) > div > div {
       background-color: $white;
-      height: 12vh;
-      width: 12vh;
       border-radius: 50%;
       box-shadow: $shadow;
+      height: 12vh;
+      width: 12vh;
       .text {
-        letter-spacing: 1pt;
         font-size: 3.5vh;
+        letter-spacing: 1pt;
       }
     }
     .text {
       font-size: 2.5vh;
       font-weight: 600;
-      text-transform: capitalize;
       letter-spacing: 1pt;
-      color: $textGradient1 !important;
-      background: $textGradient1;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       margin-bottom: 0;
+      text-transform: capitalize;
     }
   }
 }
 
 .mostUsedApps {
   .title {
-    letter-spacing: 1pt;
-    font-size: 2.2vh;
     color: $white;
-    text-transform: capitalize;
+    font-size: 2.2vh;
+    letter-spacing: 1pt;
     text-align: center;
+    text-transform: capitalize;
   }
   .mostUsedAppsContainer {
-    width: 65vw;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: $shadow;
     height: max-content;
     padding-bottom: 10px;
     padding-top: 5px;
-    background-color: $white;
-    box-shadow: $shadow;
-    border-radius: 10px;
+    width: 65vw;
   }
   .app {
     width: 100%;
     .appName {
-      background: $textGradient1;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 2vh;
+      letter-spacing: 1pt;
       margin-bottom: 0.5vh;
       margin-top: 0.5vh;
-      letter-spacing: 1pt;
-      font-size: 2vh;
     }
   }
   .progressBar {
-    padding-top: 14px;
-    height: 16px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
     color: #fff;
+    display: flex;
+    height: 16px;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 14px;
+    justify-content: center;
     text-align: center;
     white-space: nowrap;
-    background: $textGradient1 !important;
     p {
-      text-align: left;
-      padding-left: 10px;
       color: #fff;
+      padding-left: 10px;
+      text-align: left;
     }
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (min-width: 760px) {
+  .mostUsedAppsContainer {
+    width: 25vw !important;
+  }
 }

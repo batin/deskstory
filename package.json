@@ -25,13 +25,11 @@
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-card-carousel": "^1.1.3",
-    "react-circular-progressbar": "^2.0.3",
     "react-datepicker": "^2.14.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.9.0",
-    "reactjs-percentage-circle": "^1.0.0"
+    "react-share": "^4.1.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
@@ -51,9 +49,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/batin/badger"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/batin/badger/issues"
   }
 }
