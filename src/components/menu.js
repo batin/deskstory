@@ -55,30 +55,30 @@ const Menu = ({ nextColor, download, back }) => {
           >
             <IoIosHeart />
           </a>
-          {/* <TwitterShareButton
-            title={"My Cool Badge"}
-            hashtags={["desktime", ""]}
-            via="https://github.com/batin/badger"
+          <TwitterShareButton
+            title="Check out my work details"
+            url="https://github.com/batin/badger"
+            hashtags={["desktime", "badger"]}
+            // via="https://github.com/batin/badger"
             className="menuItem"
           >
             <TwitterIcon round size={30} />
           </TwitterShareButton>
           <FacebookShareButton
-            onClick={() => {
-              nextColor(true)
-            }}
+            quote="Check out my work details"
+            url="https://github.com/batin/badger"
             className="menuItem"
           >
             <FacebookIcon round size={30} />
           </FacebookShareButton>
           <LinkedinShareButton
-            onClick={() => {
-              nextColor(true)
-            }}
+            title="Check out my work details"
+            url="https://github.com/batin/badger"
+            source="badger"
             className="menuItem"
           >
             <LinkedinIcon round size={30} />
-          </LinkedinShareButton> */}
+          </LinkedinShareButton>
         </div>
       ) : (
         <div />
