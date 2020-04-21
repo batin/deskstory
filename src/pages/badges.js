@@ -4,11 +4,13 @@ import { AuthContext } from "../components/context"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Menu from "../components/menu"
-// import puppeteer from "puppeteer"
+import html2canvas from "html2canvas"
 
 const Badges = () => {
   const userContext = useContext(AuthContext)
   const [colorState, setColorState] = useState(0)
+  const [menu, setMenu] = useState(true)
+  const [image, setImage] = useState("")
   useEffect(() => {
     if (!userContext?.user?.emoji) {
       navigate("/")
@@ -16,26 +18,24 @@ const Badges = () => {
   }, [])
 
   const nextColor = () => {
-    setColorState((colorState + 1) % 3)
+    setColorState((colorState + 1) % 6)
   }
 
   const download = async () => {
-    // try {
-    //   let browser = await puppeteer.launch({ headless: false })
-    //   let page = await browser.newPage()
-    //   await page.goto("http://localhost:8000/")
-    //   await page.screenshot({ path: "./image.jpg", type: "jpeg" })
-    //   await page.close()
-    //   await browser.close()
-    // } catch (err) {
-    //   console.log(err)
-    // }
+    await setMenu(false)
+    const a = document.createElement("a")
+    const canvas = await html2canvas(document.getElementById("layout"))
+    a.href = canvas.toDataURL("image/png")
+    a.download = "badger.png"
+    a.click()
+    await setMenu(true)
   }
 
   return (
     <Layout colorState={colorState}>
       <SEO title="Badges For Your Instagram Story" />
       <Menu
+        show={menu}
         back={() => navigate("/")}
         nextColor={nextColor}
         download={download}

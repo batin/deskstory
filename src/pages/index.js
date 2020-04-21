@@ -100,7 +100,7 @@ const IndexPage = () => {
         rel="noopener noreferrer"
         className="menu menuItem"
       >
-        <IoIosHeart />
+        <IoIosHeart className="icon" />
       </a>
       <div className="home">
         <div className="top d-flex flex-column justify-content-center align-items-center">

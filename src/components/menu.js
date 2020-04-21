@@ -14,22 +14,22 @@ import {
   LinkedinShareButton,
   TwitterShareButton,
 } from "react-share"
-const Menu = ({ nextColor, download, back }) => {
+const Menu = ({ nextColor, download, back, show }) => {
   const [state, setState] = useState(false)
   return (
-    <div className="menu">
+    <div className={show ? "menu" : "menu d-none"}>
       <div
         onClick={() => {
           setState(!state)
         }}
         className="menuItem d-flex justify-content-center align-items-center"
       >
-        <IoMdMenu />
+        <IoMdMenu className="icon" />
       </div>
       {state ? (
         <div>
           <div onClick={() => back(true)} className="menuItem">
-            <IoMdArrowBack />
+            <IoMdArrowBack className="icon" />
           </div>
           <div
             onClick={() => {
@@ -37,7 +37,7 @@ const Menu = ({ nextColor, download, back }) => {
             }}
             className="menuItem"
           >
-            <IoIosDownload />
+            <IoIosDownload className="icon" />
           </div>
           <div
             onClick={() => {
@@ -45,7 +45,7 @@ const Menu = ({ nextColor, download, back }) => {
             }}
             className="menuItem"
           >
-            <IoMdColorPalette />
+            <IoMdColorPalette className="icon" />
           </div>
           <a
             href="https://github.com/batin/badger"
@@ -53,19 +53,21 @@ const Menu = ({ nextColor, download, back }) => {
             rel="noopener noreferrer"
             className="menuItem"
           >
-            <IoIosHeart />
+            <IoIosHeart className="icon" />
           </a>
-          <TwitterShareButton
-            title="Check out my work details"
-            url="https://github.com/batin/badger"
+          {/* <TwitterShareButton
+            title="Check out my work details "
+            url={new Image(image.split(",")[1])}
             hashtags={["desktime", "badger"]}
             // via="https://github.com/batin/badger"
+            imageURL={image}
             className="menuItem"
           >
             <TwitterIcon round size={30} />
           </TwitterShareButton>
           <FacebookShareButton
-            quote="Check out my work details"
+            quote={`Check out my work details`}
+            imageURL={image}
             url="https://github.com/batin/badger"
             className="menuItem"
           >
@@ -78,7 +80,7 @@ const Menu = ({ nextColor, download, back }) => {
             className="menuItem"
           >
             <LinkedinIcon round size={30} />
-          </LinkedinShareButton>
+          </LinkedinShareButton> */}
         </div>
       ) : (
         <div />

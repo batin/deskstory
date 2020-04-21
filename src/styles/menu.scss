@@ -2,10 +2,11 @@
   left: 2.5vh;
   position: fixed;
   top: 2.5vh;
+  display: inherit;
 }
 .menuItem {
   align-items: center;
-  background-color: $white;
+  background-color: $dark;
   border-radius: 50%;
   cursor: unset !important;
   display: flex;
@@ -14,8 +15,12 @@
   outline: none !important;
   justify-content: center;
   width: 30px;
-  svg {
-    color: $grey;
+  .icon {
+    color: $white;
     font-size: 18px;
   }
+}
+
+.d-none {
+  display: none !important;
 }

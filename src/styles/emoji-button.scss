@@ -1,10 +1,11 @@
 .emoji-button {
-  background-color: $white;
+  background-color: $dark;
   border: none;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
   height: 6vh;
   width: 6vh;
+  font-size: large;
   line-height: 6vh;
   padding: 0;
   outline: none;

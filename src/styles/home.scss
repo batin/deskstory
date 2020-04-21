@@ -1,7 +1,21 @@
 .react-datepicker {
   font-family: Dosis !important;
+  background-color: $dark !important;
   .react-datepicker__day--selected {
     background: linear-gradient(256.02deg, #7071f6 0%, #ff63a5 105.89%);
+  }
+  .react-datepicker__current-month {
+    color: $white !important;
+    letter-spacing: 1pt;
+    font-weight: 500;
+  }
+  .react-datepicker__day,
+  .react-datepicker__day-name {
+    color: $grey !important;
+  }
+  .react-datepicker__header {
+    background-color: $dark;
+    color: $grey !important;
   }
 }
 .input-error {
@@ -12,10 +26,10 @@
     height: 45vh;
     .key {
       .search-input {
-        background-color: $white;
+        background-color: $dark;
         border-radius: 10px;
         border: none;
-        color: rgba(0, 0, 0, 0.29);
+        color: $white;
         font-weight: 300;
         font-size: 20px;
         height: 6vh;
@@ -24,7 +38,7 @@
         width: 250px;
         text-align: center;
         &::placeholder {
-          color: rgba(0, 0, 0, 0.29);
+          color: $grey;
         }
         &:focus {
           outline: none !important;
@@ -38,10 +52,10 @@
       letter-spacing: 1.5pt;
     }
     .date {
-      background-color: $white;
+      background-color: $dark;
       border-radius: 10px;
       border: none;
-      color: rgba(0, 0, 0, 0.29);
+      color: $grey;
       font-weight: 300;
       font-size: 20px;
       height: 6vh;
@@ -55,7 +69,7 @@
     }
   }
   .bottom {
-    background-color: $white;
+    background-color: $dark;
     border-radius: 55px 55px 0 0;
     height: 55vh;
     margin: 0;

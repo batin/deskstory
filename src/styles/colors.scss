@@ -1,11 +1,18 @@
 $white: #fff;
+$dark: rgba(#656478, 0.7);
 $blue: #7071f6;
 $pink: #ff63a5;
 $grey: #afaebf;
-$shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-$gradient1: linear-gradient(215.97deg, #7071f6 16.62%, #ff63a5 51.91%);
-$gradient2: linear-gradient(215.88deg, #7071f6 16.62%, #63e3ff 66.17%);
-$gradient3: linear-gradient(215.97deg, #7dfbbb 9.37%, #63e3ff 54.5%);
-$textGradient1: linear-gradient(256.02deg, #7071f6 0%, #ff63a5 105.89%);
-$textGradient2: linear-gradient(256.02deg, #7071f6 0%, #63e3ff 105.89%);
-$textGradient3: linear-gradient(256.02deg, #7dfbbb 0%, #63e3ff 105.89%);
+$shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+$gradient0: linear-gradient(215.97deg, #7071f6 16.62%, #ff63a5 51.91%);
+$gradient1: linear-gradient(215.88deg, #7071f6 16.62%, #63e3ff 66.17%);
+$gradient2: linear-gradient(215.97deg, #7dfbbb 9.37%, #63e3ff 54.5%);
+$gradient3: linear-gradient(208.97deg, #ffb88c 0.83%, #e13a3a 69.69%);
+$gradient4: linear-gradient(208.97deg, #eecda3 0.83%, #ef629f 69.69%);
+$gradient5: linear-gradient(
+  208.97deg,
+  #5c36a3 0.83%,
+  #11e0fc 58.92%,
+  #ffaf7b 100%
+);
+$textGradient1: #fff;

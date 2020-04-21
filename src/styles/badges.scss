@@ -1,37 +1,35 @@
 .coloredText0 {
-  background: $textGradient1;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $textGradient1;
 }
 
 .coloredBackground0 {
-  background: $gradient1;
-}
-
-.coloredText1 {
-  background: $textGradient2;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: $gradient0;
 }
 
 .coloredBackground1 {
-  background: $gradient2;
-}
-
-.coloredText2 {
-  background: $textGradient3;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: $gradient1;
 }
 
 .coloredBackground2 {
+  background: $gradient2;
+}
+
+.coloredBackground3 {
   background: $gradient3;
+}
+
+.coloredBackground4 {
+  background: $gradient4;
+}
+
+.coloredBackground5 {
+  background: $gradient5;
 }
 
 .profileInfo {
   height: 20vh;
   .pp {
-    background-color: white;
+    background-color: $dark;
     border-radius: 50%;
     box-shadow: $shadow;
     height: 10vh;
@@ -40,12 +38,12 @@
       font-size: 4.5vh;
       margin: 0;
       padding: 0;
-      text-shadow: 0 0 5px $grey;
     }
   }
   .userInfo {
     p {
       color: $white;
+      font-weight: 600;
       font-size: 2vh;
       letter-spacing: 1pt;
       text-transform: capitalize;
@@ -57,20 +55,21 @@
   div {
     p {
       color: $white;
+      font-weight: 600;
       font-size: 1.6vh;
       margin-bottom: 5px;
       letter-spacing: 1pt;
       text-transform: capitalize;
     }
     &:first-child > div > div {
-      background-color: $white;
+      background-color: $dark;
       border-radius: 10px;
       box-shadow: $shadow;
       height: 9vh;
       width: 12vh;
     }
     &:nth-child(2) > div > div {
-      background-color: $white;
+      background-color: $dark;
       border-radius: 50%;
       box-shadow: $shadow;
       height: 12vh;
@@ -93,13 +92,18 @@
 .mostUsedApps {
   .title {
     color: $white;
+    font-weight: 600;
     font-size: 2.2vh;
     letter-spacing: 1pt;
     text-align: center;
     text-transform: capitalize;
+    p {
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
   }
   .mostUsedAppsContainer {
-    background-color: $white;
+    background-color: $dark;
     border-radius: 10px;
     box-shadow: $shadow;
     height: max-content;
@@ -128,7 +132,7 @@
     text-align: center;
     white-space: nowrap;
     p {
-      color: #fff;
+      color: $white;
       padding-left: 10px;
       text-align: left;
     }
