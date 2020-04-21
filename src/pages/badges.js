@@ -8,7 +8,7 @@ import html2canvas from "html2canvas"
 
 const Badges = () => {
   const userContext = useContext(AuthContext)
-  const [colorState, setColorState] = useState(0)
+  const [colorState, setColorState] = useState(4)
   const [menu, setMenu] = useState(true)
   const [image, setImage] = useState("")
   useEffect(() => {
@@ -112,9 +112,7 @@ const Badges = () => {
               {userContext.user?.desktimeData?.mostUsedApps?.map((app, key) => {
                 return (
                   <div key={key} className="app p-1 px-3">
-                    <p className={`appName ${"coloredText" + colorState}`}>
-                      {app.name}
-                    </p>
+                    <p className="appName">{app.name}</p>
                     <div
                       className={`progressBar ${"coloredBackground" +
                         colorState}`}

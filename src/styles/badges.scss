@@ -1,7 +1,3 @@
-.coloredText0 {
-  color: $textGradient1;
-}
-
 .coloredBackground0 {
   background: $gradient0;
 }
@@ -45,7 +41,7 @@
       color: $white;
       font-weight: 600;
       font-size: 2vh;
-      letter-spacing: 1pt;
+      letter-spacing: 1.5pt;
       text-transform: capitalize;
     }
   }
@@ -58,7 +54,7 @@
       font-weight: 600;
       font-size: 1.6vh;
       margin-bottom: 5px;
-      letter-spacing: 1pt;
+      letter-spacing: 1.5pt;
       text-transform: capitalize;
     }
     &:first-child > div > div {
@@ -75,14 +71,14 @@
       height: 12vh;
       width: 12vh;
       .text {
-        font-size: 3.5vh;
-        letter-spacing: 1pt;
+        font-size: 3vh;
+        letter-spacing: 1.5pt;
       }
     }
     .text {
       font-size: 2.5vh;
       font-weight: 600;
-      letter-spacing: 1pt;
+      letter-spacing: 1.5pt;
       margin-bottom: 0;
       text-transform: capitalize;
     }
@@ -94,7 +90,7 @@
     color: $white;
     font-weight: 600;
     font-size: 2.2vh;
-    letter-spacing: 1pt;
+    letter-spacing: 1.5pt;
     text-align: center;
     text-transform: capitalize;
     p {
@@ -115,14 +111,15 @@
     width: 100%;
     .appName {
       font-size: 2vh;
-      letter-spacing: 1pt;
+      letter-spacing: 1.5pt;
       margin-bottom: 0.5vh;
       margin-top: 0.5vh;
+      color: $white;
     }
   }
   .progressBar {
     border-radius: 10px;
-    color: #fff;
+    color: $white;
     display: flex;
     height: 16px;
     flex-direction: column;

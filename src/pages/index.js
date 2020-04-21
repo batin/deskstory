@@ -92,7 +92,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout colorState={"0"}>
+    <Layout colorState={"4"}>
       <Seo title="Home" />
       <a
         href="https://github.com/batin/badger"
