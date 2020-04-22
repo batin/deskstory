@@ -4,6 +4,11 @@
 @import "./badges.scss";
 @import "./menu.scss";
 
+@font-face {
+  font-family: "Dosis";
+  src: url(../assets/fonts/Dosis.ttf);
+}
+
 html,
 body,
 main {

@@ -4,13 +4,12 @@ import { AuthContext } from "../components/context"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Menu from "../components/menu"
-import html2canvas from "html2canvas"
+import domtoimage from "dom-to-image"
 
 const Badges = () => {
   const userContext = useContext(AuthContext)
   const [colorState, setColorState] = useState(4)
   const [menu, setMenu] = useState(true)
-  const [image, setImage] = useState("")
   useEffect(() => {
     if (!userContext?.user?.emoji) {
       navigate("/")
@@ -22,13 +21,19 @@ const Badges = () => {
   }
 
   const download = async () => {
-    await setMenu(false)
-    const a = document.createElement("a")
-    const canvas = await html2canvas(document.getElementById("layout"))
-    a.href = canvas.toDataURL("image/png")
-    a.download = "badger.png"
-    a.click()
-    await setMenu(true)
+    try {
+      await setMenu(false)
+
+      const a = document.createElement("a")
+      a.href = await domtoimage.toPng(document.getElementById("layout"), {
+        "font-family": "Dosis",
+      })
+      a.download = "badger.png"
+      a.click()
+      await setMenu(true)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   return (

@@ -35,12 +35,5 @@ module.exports = {
         head: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Dosis\:200,300,400,500,600,700,900`],
-        display: "swap",
-      },
-    },
   ],
 }
