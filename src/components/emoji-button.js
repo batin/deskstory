@@ -3,8 +3,12 @@ import PropTypes from "prop-types"
 
 const EmojiButton = ({ text, parentCallback }) => {
   return (
-    <button onClick={() => parentCallback(true)} className="emoji-button">
-      <span role="img" aria-label="emoji" aria-labelledby="">
+    <button
+      role="button"
+      onClick={() => parentCallback(true)}
+      className="emoji-button"
+    >
+      <span role="img" aria-describedby="Select your emoji" aria-label="emoji">
         {text}
       </span>
     </button>

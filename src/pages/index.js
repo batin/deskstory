@@ -104,10 +104,15 @@ const IndexPage = () => {
       </a>
       <div className="home">
         <div className="top d-flex flex-column justify-content-center align-items-center">
-          <EmojiButton text={emoji} parentCallback={() => setEmoji(emoji)} />
+          <EmojiButton
+            id="selectedEmoji"
+            text={emoji}
+            parentCallback={() => setEmoji(emoji)}
+          />
           <div className="key mt-5">
             <input
               type="text"
+              role="input"
               className={"search-input"}
               placeholder="API KEY"
               value={apikey}
@@ -125,6 +130,7 @@ const IndexPage = () => {
             WHERE IS MY API KEY ?
           </a>
           <DatePicker
+            id="datePicker"
             className="date"
             selected={date}
             onChange={date => setDate(date)}

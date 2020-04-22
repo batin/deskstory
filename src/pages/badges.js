@@ -38,7 +38,7 @@ const Badges = () => {
 
   return (
     <Layout colorState={colorState}>
-      <SEO title="Badges For Your Instagram Story" />
+      <SEO title="Badges For Your Soical Media" />
       <Menu
         show={menu}
         back={() => navigate("/")}
@@ -48,7 +48,7 @@ const Badges = () => {
       <div className="container d-flex flex-column justify-content-center align-items-center">
         <div className="profileInfo d-flex flex-column align-items-center justify-content-center">
           <div className="pp d-flex align-items-center justify-content-center">
-            <p>{userContext.user.emoji}</p>
+            <h1>{userContext.user.emoji}</h1>
           </div>
           <div className="userInfo mt-3">
             <p>
@@ -138,6 +138,7 @@ const Badges = () => {
                   </div>
                 )
               })}
+              
             </div>
           </div>
         ) : (

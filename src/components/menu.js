@@ -33,14 +33,6 @@ const Menu = ({ nextColor, download, back, show }) => {
           </div>
           <div
             onClick={() => {
-              download(true)
-            }}
-            className="menuItem"
-          >
-            <IoIosDownload className="icon" />
-          </div>
-          <div
-            onClick={() => {
               nextColor(true)
             }}
             className="menuItem"
@@ -55,6 +47,14 @@ const Menu = ({ nextColor, download, back, show }) => {
           >
             <IoIosHeart className="icon" />
           </a>
+          <div
+            onClick={() => {
+              download(true)
+            }}
+            className="menuItem"
+          >
+            <IoIosDownload className="icon" />
+          </div>
           {/* <TwitterShareButton
             title="Check out my work details "
             url={new Image(image.split(",")[1])}
