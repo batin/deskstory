@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cc0b0000-c844-41da-9661-faf29d4f9837/deploy-status)](https://deskstory.life)
-
 <h1 align="center">
   😎Desk Story👨🏼‍💻
 </h1>
