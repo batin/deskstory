@@ -24,9 +24,9 @@ const IndexPage = () => {
   const handleApps = data => {
     let apps = []
     const keys = Object.keys(data.apps)
-    keys.map(app => {
+    keys.forEach(app => {
       const sites = Object.keys(data.apps[app])
-      sites.map(site => {
+      sites.forEach(site => {
         apps = [...apps, data.apps[app][site]]
       })
     })
@@ -90,15 +90,19 @@ const IndexPage = () => {
       event.target.className = event.target.className.replace("input-error", "")
     }
   }
-
+  const ExampleCustomInput = ({ value, onClick }) => (
+    <button className="date" onClick={onClick}>
+      {value}
+    </button>
+  )
   return (
     <Layout colorState={"4"}>
       <Seo title="Home" />
       <a
-        href="https://github.com/batin/badger"
+        href="https://github.com/batin/deskstory"
         target="_blank"
         rel="noopener noreferrer"
-        className="menu menuItem"
+        className="menu menuItem ease"
       >
         <IoIosHeart className="icon" />
       </a>
@@ -107,12 +111,12 @@ const IndexPage = () => {
           <EmojiButton
             id="selectedEmoji"
             text={emoji}
+            disabled
             parentCallback={() => setEmoji(emoji)}
           />
           <div className="key mt-5">
             <input
               type="text"
-              role="input"
               className={"search-input"}
               placeholder="API KEY"
               value={apikey}
@@ -130,10 +134,12 @@ const IndexPage = () => {
             WHERE IS MY API KEY ?
           </a>
           <DatePicker
+            disabledKeyboardNavigation
             id="datePicker"
             className="date"
             selected={date}
             onChange={date => setDate(date)}
+            customInput={<ExampleCustomInput />}
           />
         </div>
         <div className="bottom">

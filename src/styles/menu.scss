@@ -3,18 +3,26 @@
   position: fixed;
   top: 2.5vh;
   display: inherit;
+  div:nth-child(2) {
+    transition: all 0.5s ease-in-out 0s;
+  }
 }
 .menuItem {
+  &:hover {
+    transform: scale3d(1.2, 1.2, 1);
+    -webkit-font-smoothing: antialiased;
+  }
   align-items: center;
   background-color: $dark;
   border-radius: 50%;
-  cursor: unset !important;
+  cursor: pointer;
   display: flex;
   height: 30px;
   margin-top: 5px;
   outline: none !important;
   justify-content: center;
   width: 30px;
+  transition: all 0.25s ease-in-out 0s;
   .icon {
     color: $white;
     font-size: 18px;

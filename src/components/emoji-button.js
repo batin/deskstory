@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const EmojiButton = ({ text, parentCallback }) => {
+const EmojiButton = ({ text, parentCallback, disabled }) => {
   return (
     <button
       role="button"
+      disabled={disabled}
       onClick={() => parentCallback(true)}
       className="emoji-button"
     >

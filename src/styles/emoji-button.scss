@@ -16,3 +16,6 @@
     background-color: darken($color: $white, $amount: 5);
   }
 }
+button:disabled {
+  color: unset;
+}

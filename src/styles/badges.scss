@@ -31,6 +31,12 @@
     height: 10vh;
     width: 10vh;
     h1 {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
       font-size: 4.5vh;
       margin: 0;
       padding: 0;
@@ -139,5 +145,17 @@
 @media only screen and (min-width: 760px) {
   .mostUsedAppsContainer {
     width: 25vw !important;
+  }
+}
+
+@media only screen and (device-width: 768px) {
+  .mostUsedAppsContainer {
+    width: 40vw !important;
+  }
+}
+
+@media only screen and (device-width: 1024px) and (device-height: 1366px) {
+  .mostUsedAppsContainer {
+    width: 40vw !important;
   }
 }

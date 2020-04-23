@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "The Badger",
-    description: "Create Badges from your ",
-    author: "@gatsbyjs",
+    title: "Desk Story",
+    description:
+      "Create fancy pages from your desktime stats for your Social Media",
+    author: "@batin",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -19,8 +20,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-default",
-        short_name: "badge",
+        name: "deskstory",
+        short_name: "deskstory",
         start_url: "/",
         background_color: "#663399",
         theme_color: "#663399",

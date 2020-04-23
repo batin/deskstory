@@ -20,6 +20,19 @@
 .input-error {
   border: 2px solid red !important;
 }
+
+#selectedEmoji {
+  cursor: unset;
+}
+
+.ease {
+  transition: all 0.25s ease-in-out 0s;
+}
+.ease:hover {
+  transform: scale3d(1.2, 1.2, 1);
+  -webkit-font-smoothing: antialiased;
+}
+
 .home {
   .top {
     height: 45vh;
@@ -82,15 +95,16 @@
       align-self: center;
       text-align: center;
       border-radius: 10px;
-      bottom: 3vh;
+      // bottom: 3vh;
       background: $gradient4;
       color: $white;
       font-weight: 300;
       font-size: 22px;
       height: 6vh;
+      margin-top: 3vh;
       line-height: 6vh;
       letter-spacing: 1.5pt;
-      position: absolute;
+      // position: absolute;
       text-align: center;
       text-decoration: none;
       width: 50vw;
@@ -121,6 +135,46 @@
     border-radius: 55px !important;
     height: 45vh !important;
     width: 35vw !important;
+    margin: auto !important;
+    margin-bottom: 50px;
+    .next-button {
+      width: 10vw !important;
+      bottom: 15vh !important;
+    }
+  }
+}
+
+@media only screen and (device-width: 768px) {
+  .search-input {
+    width: 55vw !important;
+  }
+  .date {
+    width: 55vw !important;
+  }
+  .bottom {
+    border-radius: 55px !important;
+    height: 45vh !important;
+    width: 55vw !important;
+    margin: auto !important;
+    margin-bottom: 50px;
+    .next-button {
+      width: 10vw !important;
+      bottom: 15vh !important;
+    }
+  }
+}
+
+@media only screen and (device-width: 1024px) and (device-height: 1366px) {
+  .search-input {
+    width: 55vw !important;
+  }
+  .date {
+    width: 55vw !important;
+  }
+  .bottom {
+    border-radius: 55px !important;
+    height: 45vh !important;
+    width: 55vw !important;
     margin: auto !important;
     margin-bottom: 50px;
     .next-button {
